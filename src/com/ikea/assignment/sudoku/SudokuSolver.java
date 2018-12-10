@@ -77,7 +77,7 @@ public class SudokuSolver {
 	 * @param number The possible number that can meet the Sudoku rules for a cell
 	 * @return
 	 */
-	private boolean isOk(int row, int col, int number) {
+	private boolean isValid(int row, int col, int number) {
 		return !isInRow(row, number) && !isInCol(col, number) && !isInBox(row, col, number);
 	}
 
@@ -95,7 +95,7 @@ public class SudokuSolver {
 				if (grid[row][col] == SudokuConstants.EMPTY_CELL_VALUE) {
 					// loop through the possible numbers 1-9
 					for (int number = 1; number <= SudokuConstants.SUDOKU_SIZE; number++) {
-						if (isOk(row, col, number)) {
+						if (isValid(row, col, number)) {
 							// so it satisfies the row/col/box rules of Sudoku
 							grid[row][col] = number;
 

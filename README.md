@@ -2,10 +2,10 @@
 Sudoku Assignment
 
 Note the below points re the Sudoku solver program:
+-> This program does not 'generate' Sudokus, it takes valid Suduko puzzle and solves it 
 -> Enter each Sudoku puzzle as single line in the input file 'puzzle.txt'.
 -> Each character is either a number (1-9) or some other character to symblize an empty box. No spaces or extra characters.
 -> The level of complexity can be Easy/Medium/Hard/Samurai.
--> The given Sudokus should be valid
 -> The input file should be named 'puzzle.txt' and should be placed inside a folder 'input'. This folder should be next to the executable jar.
 
 Example Sudokus:
