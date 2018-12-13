@@ -98,6 +98,7 @@ public class SudokuSolver {
 						if (isValid(row, col, number)) {
 							// so it satisfies the row/col/box rules of Sudoku
 							grid[row][col] = number;
+							System.out.println("valid -grid["+row+"]["+col+"]="+number );
 
 							if (solve()) { // invoking solve() method backtracking recursively
 								return true;
@@ -107,6 +108,7 @@ public class SudokuSolver {
 						}
 					}
 
+					System.out.println("false: grid["+row+"]["+col+"]="+grid[row][col]  );
 					return false; // we return false
 				}
 			}
@@ -117,12 +119,19 @@ public class SudokuSolver {
 
 	public void display() {
 		for (int i = 0; i < SudokuConstants.SUDOKU_SIZE; i++) {
+			if (i % 3 == 0) {
+				System.out.println(" ---------------------");
+			}
 			for (int j = 0; j < SudokuConstants.SUDOKU_SIZE; j++) {
+				if (j != 0 && j % 3 == 0) {
+					System.out.print(" |");
+				}
 				System.out.print(" " + grid[i][j]);
 			}
 
 			System.out.println();
 		}
+		System.out.println(" ---------------------");
 
 		System.out.println();
 	}
